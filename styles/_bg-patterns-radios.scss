@@ -1,0 +1,110 @@
+// Colors
+$bg-patterns-radio-colors: (
+  "color-gray": $color-gray,
+  "color-black": $color-black,
+  "color-purple-dark": $color-purple-dark,
+  "color-purple-medium": $color-purple-medium,
+  "color-purple-light": $color-purple-light,
+  "color-levander": $color-levander,
+  "color-gray-light": $color-gray-light,
+  "color-white": $color-white,
+  "color-teal": $color-teal,
+  "color-teal-light": $color-teal-light,
+  "color-mint": $color-mint,
+  "color-gold": $color-gold,
+  "color-red": $color-red,
+  "color-fuchsia": $color-fuchsia,
+);
+// Pops
+$bg-patterns-radio-pops: (
+  "pop-teal-light": $color-teal-light,
+  "pop-mint": $color-mint,
+  "pop-gold": $color-gold,
+  "pop-red": $color-red,
+  "pop-fuchsia": $color-fuchsia,
+);
+.custom-radios {
+  div {
+    display: inline-block;
+  }
+
+  input[type="radio"] {
+    display: none;
+
+    + label {
+      color: $color-gray;
+      font-family: Arial, sans-serif;
+      font-size: 14px;
+
+      span {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        margin: -1px 4px 0 0;
+        vertical-align: middle;
+        cursor: pointer;
+        border-radius: 50%;
+        border: 2px solid $color-white;
+        box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+        background-repeat: no-repeat;
+        background-position: center;
+        text-align: center;
+        line-height: 44px;
+        transition: all 0.3s ease;
+
+        img,
+        svg {
+          opacity: 0;
+          transition: all 0.3s ease;
+          fill: $color-white;
+        }
+        svg {
+          height: 13px;
+          width: 18px;
+        }
+      }
+    }
+    @each $color-name, $color-value in $bg-patterns-radio-colors {
+      &##{$color-name} + label span {
+        background-color: $color-value;
+      }
+    }
+    @each $pop-name, $pop-value in $bg-patterns-radio-pops {
+      &##{$pop-name} + label span {
+        background-color: $pop-value;
+      }
+    }
+    &:checked + label span img,
+    &:checked + label span svg {
+      opacity: 1;
+    }
+    &#color-levander + label span svg,
+    &#color-white + label span svg,
+    &#color-gray-light + label span svg {
+      fill: $color-black;
+    }
+    &.radio-pattern + label span span.letter {
+      background-color: transparent;
+      border: none;
+      font-weight: normal;
+      font-size: 18px;
+      display: inline;
+      width: auto;
+      height: auto;
+      margin: 0;
+      vertical-align: auto;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+      line-height: 1;
+      position: relative;
+      top: -3px;
+    }
+    &.radio-pattern:checked + label span {
+      background-color: $color-teal-light;
+    }
+    &.radio-pattern:checked + label span span.letter {
+      color: $color-white;
+    }
+  }
+}

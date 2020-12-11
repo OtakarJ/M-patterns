@@ -1,0 +1,34 @@
+$bg-paterns: (
+  "black",
+  "gray",
+  "gray-light",
+  "white",
+  "levander",
+  "purple-light",
+  "purple-medium",
+  "purple-dark",
+  "teal",
+  "gold",
+  "fuchsia",
+  "red",
+  "teal-light",
+  "mint"
+);
+$bg-paterns-pop: ("gold", "fuchsia", "red", "teal-light", "mint");
+$bg-pattern-types: a, b, c, d;
+
+@each $bg-pattern-color in $bg-paterns {
+  @each $bg-pattern-pop in $bg-paterns-pop {
+    @each $bg-pattern-type in $bg-pattern-types {
+      @if $bg-pattern-color != $bg-pattern-pop {
+        .bg--#{$bg-pattern-color}-pop-#{$bg-pattern-pop}-#{$bg-pattern-type} {
+          background-image: url("../images/patterns/pattern-#{$bg-pattern-color}-pop-#{$bg-pattern-pop}-#{$bg-pattern-type}.svg");
+        }
+      } @else {
+        .bg--#{$bg-pattern-color}-#{$bg-pattern-type} {
+          background-image: url("../images/patterns/pattern-#{$bg-pattern-color}-#{$bg-pattern-type}.svg");
+        }
+      }
+    }
+  }
+}

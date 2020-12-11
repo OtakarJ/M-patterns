@@ -1,0 +1,78 @@
+/* Colors */
+@import "colors";
+:root {
+  font-size: 16px;
+}
+body {
+  margin: 0;
+  padding: 0;
+}
+body * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  max-width: 1200px;
+  margin: auto;
+}
+.preview {
+  pre {
+    span {
+      display: inline !important;
+      padding: 0;
+      border: 1px solid $color-teal-light;
+      background-color: $color-levander;
+    }
+  }
+}
+#pattern-demo {
+  width: 500px;
+  height: 500px;
+  margin: 40px;
+  border: 20px solid $color-white;
+  box-shadow: inset 0 0 0 20px $color-teal-light;
+  background-repeat: no-repeat;
+  background-size: 100% 100%;
+}
+.grid {
+  display: grid;
+  grid-template-columns: calc(75% - 1rem) calc(25% - 1rem);
+  grid-template-rows: repeat(3, calc(100% / 3 - 1rem));
+  gap: 1rem 1rem;
+  grid-template-areas:
+    "one two"
+    "one three"
+    "one four";
+  padding: 2rem;
+  box-shadow: inset 0 0 1px 0 #000;
+  margin: 2rem auto;
+}
+.one {
+  grid-area: one;
+}
+.two {
+  grid-area: two;
+}
+.three {
+  grid-area: three;
+}
+.four {
+  grid-area: four;
+}
+.demo {
+  padding-bottom: 100%;
+  background-size: 100% 100%;
+}
+
+.demo {
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+}
+/* Background Patterns Radios */
+@import "bg-patterns-radios";
+/* Background Patterns */
+@import "bg-patterns";
