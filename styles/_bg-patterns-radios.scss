@@ -103,6 +103,9 @@ $bg-patterns-radio-pops: (
     &.radio-pattern:checked + label span {
       background-color: $color-teal-light;
     }
+    &.radio-pattern + label span span.letter {
+      color: $color-gray-light;
+    }
     &.radio-pattern:checked + label span span.letter {
       color: $color-white;
     }

@@ -2,6 +2,7 @@
 @import "colors";
 :root {
   font-size: 16px;
+  font-family: sans-serif;
 }
 body {
   margin: 0;
@@ -15,63 +16,39 @@ body * {
 .container {
   max-width: 1200px;
   margin: auto;
+  padding: 3rem 6rem;
+}
+h1,
+h2,
+h3,
+p {
+  margin: 2rem 0 0.5rem 0;
 }
 .preview {
   pre {
+    background-color: $color-gray-light;
+    display: inline-block;
+    padding: 0 0.5rem;
+    line-height: 2;
     span {
-      display: inline !important;
+      display: inline-block;
+      margin: 0;
       padding: 0;
-      border: 1px solid $color-teal-light;
       background-color: $color-levander;
+      font-weight: bold;
+      line-height: 2;
     }
   }
 }
 #pattern-demo {
-  width: 500px;
-  height: 500px;
-  margin: 40px;
+  width: 600px;
+  height: 600px;
+  margin: 2rem 20px;
   border: 20px solid $color-white;
-  box-shadow: inset 0 0 0 20px $color-teal-light;
+  box-shadow: 0 0 0 20px $color-teal-light;
   background-repeat: no-repeat;
   background-size: 100% 100%;
-  transition: all ease 0.3s;
-}
-.grid {
-  display: grid;
-  grid-template-columns: calc(75% - 1rem) calc(25% - 1rem);
-  grid-template-rows: repeat(3, calc(100% / 3 - 1rem));
-  gap: 1rem 1rem;
-  grid-template-areas:
-    "one two"
-    "one three"
-    "one four";
-  padding: 2rem;
-  box-shadow: inset 0 0 1px 0 #000;
-  margin: 2rem auto;
-}
-.one {
-  grid-area: one;
-}
-.two {
-  grid-area: two;
-}
-.three {
-  grid-area: three;
-}
-.four {
-  grid-area: four;
-}
-.demo {
-  padding-bottom: 100%;
-  background-size: 100% 100%;
-}
-
-.demo {
-  img {
-    width: 100%;
-    height: auto;
-    display: block;
-  }
+  transition: background-image ease 0.3s;
 }
 /* Background Patterns Radios */
 @import "bg-patterns-radios";
