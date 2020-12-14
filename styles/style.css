@@ -35,7 +35,7 @@ p {
   line-height: 2;
 }
 
-.preview pre span {
+.preview pre span.value {
   display: inline-block;
   margin: 0;
   padding: 0;
