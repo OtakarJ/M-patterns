@@ -50,6 +50,24 @@ p {
   background-size: 100% 100%;
   transition: background-image ease 0.3s;
 }
+a#download { text-decoration: none; font-family: Arial, sans-serif;
+  font-size: 14px; display: inline-block;
+  height: 40px;
+  padding:  0 10px;
+  border-radius: 20px;
+  margin: -1px 4px 0 0;
+  cursor: pointer;
+  border: 2px solid $color-white;
+  color: $color-black;
+  background-color: $color-gray-light;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.33);
+  line-height: 36px;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  &:hover {
+    background-color: $color-levander;
+  }
+}
 /* Background Patterns Radios */
 @import "bg-patterns-radios";
 /* Background Patterns */

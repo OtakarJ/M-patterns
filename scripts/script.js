@@ -1,12 +1,12 @@
 var inputs = document.querySelectorAll("input");
 
-inputs.forEach(function(i){
-    i.addEventListener('click', function(el){
+inputs.forEach(function (i) {
+    i.addEventListener('click', function (el) {
 
         var variable1 = document.querySelector('input[name="color"]:checked').value; // document.querySelector('input[name="food"]:checked').value;
         var variable2 = document.querySelector('input[name="pop"]:checked').value;
         var variable3 = document.querySelector('input[name="pattern"]:checked').value;
-   
+
         if (variable1 != variable2) {
             var backgroundClass = "bg--" + variable1 + "-pop-" + variable2 + "-" + variable3;
             document.getElementById('pop').style.display = 'inline-block';
@@ -15,7 +15,7 @@ inputs.forEach(function(i){
             var backgroundClass = "bg--" + variable1 + "-" + variable3;
             document.getElementById('pop').style.display = 'none';
 
-    }
+        }
 
         document.getElementById('pattern-demo').className = "";
         document.getElementById('pattern-demo').classList.add(backgroundClass);
@@ -24,9 +24,12 @@ inputs.forEach(function(i){
         document.getElementById('value-pop').innerText = variable2;
         document.getElementById('value-type').innerText = variable3;
 
+        var downloadLink = "images/patterns/" + backgroundClass + ".svg";
+        document.getElementById('download').setAttribute("href", downloadLink);
+
     });
 
 });
-window.onload=function(){
+window.onload = function () {
     document.querySelector('input[name="color"]:checked').click();
-  };
+};

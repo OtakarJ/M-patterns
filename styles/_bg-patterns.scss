@@ -22,11 +22,11 @@ $bg-pattern-types: a, b, c, d;
     @each $bg-pattern-type in $bg-pattern-types {
       @if $bg-pattern-color != $bg-pattern-pop {
         .bg--#{$bg-pattern-color}-pop-#{$bg-pattern-pop}-#{$bg-pattern-type} {
-          background-image: url("../images/patterns/pattern-#{$bg-pattern-color}-pop-#{$bg-pattern-pop}-#{$bg-pattern-type}.svg");
+          background-image: url("../images/patterns/bg--#{$bg-pattern-color}-pop-#{$bg-pattern-pop}-#{$bg-pattern-type}.svg");
         }
       } @else {
         .bg--#{$bg-pattern-color}-#{$bg-pattern-type} {
-          background-image: url("../images/patterns/pattern-#{$bg-pattern-color}-#{$bg-pattern-type}.svg");
+          background-image: url("../images/patterns/bg--#{$bg-pattern-color}-#{$bg-pattern-type}.svg");
         }
       }
     }
